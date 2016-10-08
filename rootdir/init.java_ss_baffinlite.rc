@@ -396,8 +396,8 @@ on charger
     write /proc/vc/display/vchiq_control "autosuspend "
 
 on fs
-    mount_all /fstab.java
-    swapon_all /fstab.java
+    mount_all /fstab.java_ss_baffinlite
+    swapon_all /fstab.java_ss_baffinlite
 
     # For NV Read/Write
     chown radio system /dev/block/mmcblk0p1

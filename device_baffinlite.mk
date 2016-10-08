@@ -10,12 +10,12 @@ TARGET_SCREEN_HEIGHT := 800
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.java:root/fstab.java \
-    $(LOCAL_PATH)/rootdir/init.java.rc:root/init.java.rc \
+    $(LOCAL_PATH)/rootdir/fstab.java_ss_baffinlite:root/fstab.java_ss_baffinlite \
+    $(LOCAL_PATH)/rootdir/init.java_ss_baffinlite.rc:root/init.java_ss_baffinlite.rc \
     $(LOCAL_PATH)/rootdir/init.bcm281x5.usb.rc:root/init.bcm281x5.usb.rc \
     $(LOCAL_PATH)/rootdir/init.log.rc:root/init.log.rc \
-    $(LOCAL_PATH)/rootdir/init.recovery.java.rc:root/init.recovery.java.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.java.rc:root/ueventd.java.rc
+    $(LOCAL_PATH)/rootdir/init.recovery.java_ss_baffinlite.rc:root/init.recovery.java_ss_baffinlite.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.java_ss_baffinlite.rc:root/ueventd.java_ss_baffinlite.rc
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
