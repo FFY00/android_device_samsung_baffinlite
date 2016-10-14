@@ -1,5 +1,5 @@
 # Get non-open-source parts
-$(call inherit-product, vendor/samsung/i9082/i9082-vendor.mk)
+$(call inherit-product, vendor/samsung/baffinlite/baffinlite-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
