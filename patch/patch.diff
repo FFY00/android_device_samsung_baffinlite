@@ -614,7 +614,7 @@ diff -ur CM12.1_laganxx/frameworks/native/libs/gui/BufferQueueProducer.cpp CM12.
              const int newUndequeuedCount =
                  maxBufferCount - (dequeuedCount + 1);
              const int minUndequeuedCount =
-+#ifdef HAWAII_HWC
++#ifdef JAVA_HWC
 +                // HACK: for some reason, we need to reduce min undequeue for screen recording
 +                mCore->getMinUndequeuedBufferCountLocked(false);
 +#else			
@@ -656,7 +656,7 @@ diff -ur CM12.1_laganxx/frameworks/native/libs/gui/SurfaceComposerClient.cpp CM1
      sp<ISurfaceComposer> s(ComposerService::getComposerService());
      if (s == NULL) return NO_INIT;
 -#ifdef USE_MHEAP_SCREENSHOT
-+#if defined(USE_MHEAP_SCREENSHOT) && !defined(HAWAII_HWC)
++#if defined(USE_MHEAP_SCREENSHOT) && !defined(JAVA_HWC)
      int format = 0;
      producer->query(NATIVE_WINDOW_FORMAT,&format);
      if (format == PIXEL_FORMAT_RGBA_8888) {
@@ -667,8 +667,8 @@ diff -ur CM12.1_laganxx/frameworks/native/services/surfaceflinger/DisplayHardwar
          //getLayer()->compositionType = HWC_FRAMEBUFFER;
      }
      virtual void setPlaneAlpha(uint8_t alpha) {
-+// HAWAII_HWC does not respect planeAlpha despite being v1.2
-+	#ifndef HAWAII_HWC		
++// JAVA_HWC does not respect planeAlpha despite being v1.2
++	#ifndef JAVA_HWC		
          if (hwcHasApiVersion(mHwc, HWC_DEVICE_API_VERSION_1_2)) {
              getLayer()->planeAlpha = alpha;
          } else {
@@ -676,7 +676,7 @@ diff -ur CM12.1_laganxx/frameworks/native/services/surfaceflinger/DisplayHardwar
              if (alpha < 0xFF) {
                  getLayer()->flags |= HWC_SKIP_LAYER;
              }
-+	#ifndef HAWAII_HWC		
++	#ifndef JAVA_HWC		
          }
 +	#endif	
      }
@@ -691,7 +691,7 @@ diff -ur CM12.1_laganxx/frameworks/native/services/surfaceflinger/SurfaceFlinger
      ATRACE_CALL();
 +	
 +// Rotation artifact problems when useReadPixels is false
-+#ifdef HAWAII_HWC
++#ifdef JAVA_HWC
 +    useReadPixels = true;
 +#endif
  

@@ -1,16 +1,16 @@
 # Release name
-PRODUCT_RELEASE_NAME := GT-S7272
+PRODUCT_RELEASE_NAME := GT-I9060
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/logands/device_logands.mk)
+$(call inherit-product, device/samsung/baffinlite/device_baffinlite.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := logands
-PRODUCT_NAME := cm_logands
+PRODUCT_DEVICE := baffinlite
+PRODUCT_NAME := cm_baffinlite
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := GT-S7272
+PRODUCT_MODEL := GT-I9060
 PRODUCT_CHARACTERISTICS := phone

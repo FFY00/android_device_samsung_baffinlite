@@ -13,8 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_DEVICE),logands)
-ifeq ($(TARGET_BOARD_PLATFORM),hawaii)
+ifeq ($(TARGET_DEVICE),baffinlite)
+ifeq ($(TARGET_BOARD_PLATFORM),java)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -29,7 +29,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
 LOCAL_SHARED_LIBRARIES := liblog
 
-LOCAL_MODULE := lights.hawaii
+LOCAL_MODULE := lights.java
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

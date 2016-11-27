@@ -1,4 +1,4 @@
-android_device_logands
+android_device_baffinlite
 ======================
 
-Device tree for Samsung Galaxy Ace 3 GT-S7272 (2 SIM)
+Device tree for Samsung Galaxy Grand Neo GT-I9060 (2 SIM)
