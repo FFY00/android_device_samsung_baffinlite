@@ -21,11 +21,12 @@ TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a7 -mfpu=neon -mfloat-abi=softfp
 TARGET_OTA_ASSERT_DEVICE := baffinlite,I9060,GT-i9060,java
 
 # Kernel
-BOARD_KERNEL_BASE := 0x82000000
+BOARD_KERNEL_BASE := 0xa2000000
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
 BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_CONFIG := bcm21664_java_ss_baffinlite_rev01_defconfig
-TARGET_KERNEL_SOURCE := device/samsung/baffinlite/kernel
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
+TARGET_KERNEL_CONFIG := baffinlite_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/baffinlite
+#TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
 # PARTITION SIZE
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
