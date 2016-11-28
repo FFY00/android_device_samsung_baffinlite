@@ -1,6 +1,6 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/baffinlite/baffinlite-common-vendor.mk)
+$(call inherit-product, vendor/samsung/baffinlite/baffinlite-vendor.mk)
 
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
